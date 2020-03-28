@@ -30,5 +30,16 @@ public class AppTest
     	
     	
     }
+	@Test
+    public void storeTestSetNumber() {
+    	
+    	CommandStore store = new CommandStore((double) 12,moteur);
+    	store.setNumber((double) 3);
+    	store.apply();	
+    	assertEquals(3, moteur.operandes.pop(), 0);
+    	
+    	
+    }
+	
    
 }
