@@ -4,16 +4,19 @@ import java.util.Stack;
 
 public class Interpreter {
 	
-	private Stack<Integer> pile;
+	protected Stack<Double> operandes;
+	protected Stack<Double> operandesPrecedent;
 
-	public Interpreter(Stack<Integer> pile) {
+	public Interpreter() {
 		
-		this.pile = pile;
+		this.operandes = new Stack<Double>();
 	}
 	
+	
+
 	//undo pour l'innulation
 	public void undo() {
-		this.pile=pile;
+		this.operandes=operandesPrecedent ;
 	}
 	
 	//quitter 

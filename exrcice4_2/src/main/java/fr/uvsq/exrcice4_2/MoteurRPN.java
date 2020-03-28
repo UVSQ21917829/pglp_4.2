@@ -2,24 +2,24 @@ package fr.uvsq.exrcice4_2;
 
 import java.util.Stack;
 
-public class MoteurRPN {
+public class MoteurRPN extends Interpreter{
 	
 	//les opérandes
-	private Stack<Double> operandes;
 
 	public MoteurRPN() {
-		this.operandes = new Stack<Double>();
+		
+		super();
 	}
 
-	public Stack<Double> getOperandes() {
-		return operandes;
-	}
+	
 
-	public void setOperandes(Stack<Double> operandes) {
-		this.operandes = operandes;
-	}
+	
 	// la methode de l'enregistrement
 	public void enregestrerOper(double valeur) {
+		
+		Stack<Double> temp=new Stack<Double>();
+		temp.addAll(operandes);
+		operandesPrecedent.addAll(temp);
 		operandes.add(valeur);
 		
 	}
