@@ -58,6 +58,20 @@ public class OperationTest {
 		
 		
 	}
+	@Test
+	public void testMult() {
+		double val1=6.0,val2=5.0;
+		CommandStore store = new CommandStore((double) val1,mot);
+		
+		store.apply();
+		store.setNumber(val2);
+		store.apply();
+		ApplicationCom cm= new ApplicationCom(Operation.Mult,mot);
+		cm.apply();
+		assertEquals(Double.valueOf(mot.operandes.get(0)), Double.valueOf(30.0));
+		
+		
+	}
 
 	
 
