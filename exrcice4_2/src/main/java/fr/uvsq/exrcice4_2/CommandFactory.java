@@ -4,8 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CommandFactory {
+	
 	private final Map<String , Interfacecommand> commands ;
-
+    private MoteurRPN moteur;
+    
 	public CommandFactory() {
 		super();
 		this.commands = new HashMap<>();
@@ -19,10 +21,15 @@ public class CommandFactory {
 		}
 	}
     
-	public static CommandFactory init() {
+	public  CommandFactory init(MoteurRPN moteur) {
 		
-		CommandFactory cf= new CommandFactory();
-		return null;
+			this.moteur = moteur;
+			this.addCommand("quit", new QuitCommand(moteur));
+			this.addCommand("undo", new Undo(moteur));
+			this.addCommand("ApplicationCom", new ApplicationCom(moteur));
+			this.addCommand("Store", new CommandStore(moteur));
+		
+		return this;
 		
 	}
 }

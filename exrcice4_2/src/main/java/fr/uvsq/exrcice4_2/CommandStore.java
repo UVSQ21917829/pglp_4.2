@@ -12,6 +12,9 @@ public class CommandStore implements Interfacecommand{
 		this.number = number;
 		this.moteur=moteur;
 	}
+	public CommandStore(MoteurRPN moteur) {
+		this.moteur=moteur;
+	}
 
 
 	public MoteurRPN getMoteur() {

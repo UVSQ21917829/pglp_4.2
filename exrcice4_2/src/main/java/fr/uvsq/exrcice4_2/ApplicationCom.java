@@ -14,9 +14,14 @@ public class ApplicationCom implements Interfacecommand {
 	}
 
 	public ApplicationCom(Operation op, MoteurRPN moteur) {
-		super();
+		
 		this.op = op;
 		this.moteur = moteur;
+	}
+
+	public ApplicationCom(MoteurRPN moteur2) {
+		// TODO Auto-generated constructor stub
+		this.moteur = moteur2;
 	}
 
 	@Override
