@@ -4,7 +4,6 @@ import java.util.Stack;
 
 public class MoteurRPN extends Interpreter{
 	
-	//les opérandes
 
 	public MoteurRPN() {
 		

@@ -9,11 +9,13 @@ public class CommandFactory {
     private MoteurRPN moteur;
     
 	public CommandFactory() {
-		super();
 		this.commands = new HashMap<>();
 	}
 	public void addCommand(String name,Interfacecommand command ) {
 		commands.put(name, command);
+	}
+	public Map<String, Interfacecommand> getCommands() {
+		return commands;
 	}
 	public void executeCommand(String name) {
 		if(this.commands.containsKey(name)) {

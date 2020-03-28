@@ -1,8 +1,8 @@
 package fr.uvsq.exrcice4_2;
 
-public class ApplicationCom implements Interfacecommand {
+public  class ApplicationCom implements Interfacecommand {
 
-	private Operation op;
+	private static Operation op;
 	private MoteurRPN moteur;
 
 	public void setOp(Operation op) {

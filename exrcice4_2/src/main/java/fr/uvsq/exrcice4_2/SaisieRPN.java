@@ -9,12 +9,13 @@ public final static int MIN_VALEUR=-1000;
 
 private Scanner scanner = new Scanner(System.in);
 public MoteurRPN Moteur;
-
+private CommandFactory commandFactory;
 
 public SaisieRPN(){
 
 Moteur= new MoteurRPN();
-
+this.commandFactory = new CommandFactory();
+this.commandFactory.init(Moteur);
 System.out.println("******************CALCULATRICE RPN*****************");
 System.out.println();
 System.out.println();
@@ -29,30 +30,34 @@ String str = scanner.nextLine();
 try {
 
 if(str.equals("+")) {
-	Moteur.appliquerOperation(Operation.Plus);
+	commandFactory.executeCommand("ApplicationCom");
+	
 	Moteur.afficherOperandes();
 	
 }else if(str.equals("-")) {
-	Moteur.appliquerOperation(Operation.Moins);
+	commandFactory.executeCommand("ApplicationCom");
 	Moteur.afficherOperandes();
 	
 }else if(str.equals("*")) {
-	Moteur.appliquerOperation(Operation.Mult);
+	commandFactory.executeCommand("ApplicationCom");
 	Moteur.afficherOperandes();
 	
 }else if(str.equals("/")) {
-	Moteur.appliquerOperation(Operation.Div);
+	commandFactory.executeCommand("ApplicationCom");
 	Moteur.afficherOperandes();
 	
 }else if(str.equals("quitter")) {
-	System.exit(0);	
+	commandFactory.executeCommand("quit");
+}
+else if(str.equals("undo")) {
+	commandFactory.executeCommand("undo");
 }
 else {
 	double operande = Double.parseDouble(str);
 	
 	if(operande>= MIN_VALEUR && operande <= MAX_VALEUR){
 		
-		Moteur.enregestrerOper(operande);
+		commandFactory.executeCommand("store");
 		Moteur.afficherOperandes();
 	}
 	else{

@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class CommandStore implements Interfacecommand{
 
-	private Double number;
+	private  Double number;
 	private MoteurRPN moteur;
 	
 	public CommandStore(Double number,MoteurRPN moteur) {
