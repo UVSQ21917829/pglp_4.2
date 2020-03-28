@@ -27,7 +27,22 @@ public class OperationTest {
 		
 	}
 	
+	@Test
+	public void testPlus() {
 		
+		double val1=9.0,val2=6.0;
+		CommandStore store = new CommandStore((double) val1,mot);
+		
+		store.apply();
+		store.setNumber(val2);
+		store.apply();
+		ApplicationCom cm= new ApplicationCom(Operation.Plus,mot);
+		cm.apply();
+		assertEquals(Double.valueOf(mot.operandes.get(0)), Double.valueOf(15.0));
+		
+		
+	}
+
 	
 
 
