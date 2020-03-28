@@ -38,11 +38,19 @@ public class MoteurRPN extends Interpreter{
 	}
 	//la méthode d'afficher les opérandes stockées
 	public void afficherOperandes() {
-		
+		System.out.println(" New List");
         for(int i=0;i<operandes.size();i++){
         System.out.print(" "+operandes.get(i)+"\'");
         }
+	}
+    public void afficherOperandesPr() {
+		
+    	System.out.println(" Last List");
+    	
+        for(int i=0;i<operandesPrecedent.size();i++){
+        System.out.print(" "+operandesPrecedent.get(i)+"\'");
+        }
         
-}
+    }
 
 }

@@ -29,9 +29,27 @@ public class CommandFactory {
 			this.addCommand("quit", new QuitCommand(moteur));
 			this.addCommand("undo", new Undo(moteur));
 			this.addCommand("ApplicationCom", new ApplicationCom(moteur));
-			this.addCommand("Store", new CommandStore(moteur));
+			this.addCommand("store", new CommandStore(moteur));
 		
 		return this;
 		
+	}
+	public void setOperation(Operation op) {
+		
+		if(commands.containsKey("ApplicationCom")) {
+			
+			 ((ApplicationCom) commands.get("ApplicationCom")).setOp(op);
+			
+		}	
+	}
+	
+	
+	public void setNumber(Double nbr) {
+		
+
+		if(this.commands.containsKey("store")) {
+			((CommandStore) this.commands.get("store")).setNumber(nbr);
+
+		}
 	}
 }

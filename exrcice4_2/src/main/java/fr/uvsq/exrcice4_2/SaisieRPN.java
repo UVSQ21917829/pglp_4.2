@@ -30,35 +30,47 @@ String str = scanner.nextLine();
 try {
 
 if(str.equals("+")) {
+	commandFactory.setOperation(Operation.Plus);
 	commandFactory.executeCommand("ApplicationCom");
 	
 	Moteur.afficherOperandes();
+	Moteur.afficherOperandesPr();
 	
 }else if(str.equals("-")) {
+	commandFactory.setOperation(Operation.Moins);
 	commandFactory.executeCommand("ApplicationCom");
 	Moteur.afficherOperandes();
+	Moteur.afficherOperandesPr();
 	
 }else if(str.equals("*")) {
+	commandFactory.setOperation(Operation.Mult);
 	commandFactory.executeCommand("ApplicationCom");
 	Moteur.afficherOperandes();
+	Moteur.afficherOperandesPr();
 	
 }else if(str.equals("/")) {
+	commandFactory.setOperation(Operation.Div);
 	commandFactory.executeCommand("ApplicationCom");
 	Moteur.afficherOperandes();
+	Moteur.afficherOperandesPr();
 	
 }else if(str.equals("quitter")) {
 	commandFactory.executeCommand("quit");
 }
 else if(str.equals("undo")) {
+	
 	commandFactory.executeCommand("undo");
+	Moteur.afficherOperandes();
+	Moteur.afficherOperandesPr();
 }
 else {
 	double operande = Double.parseDouble(str);
 	
 	if(operande>= MIN_VALEUR && operande <= MAX_VALEUR){
-		
+		commandFactory.setNumber(operande);
 		commandFactory.executeCommand("store");
 		Moteur.afficherOperandes();
+		Moteur.afficherOperandesPr();
 	}
 	else{
 
