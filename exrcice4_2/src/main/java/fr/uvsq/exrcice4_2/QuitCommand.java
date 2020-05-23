@@ -1,11 +1,11 @@
 package fr.uvsq.exrcice4_2;
 
-public class QuitCommand implements Interfacecommand{
+public class QuitCommand implements Interfacecommand {
 
 	private Interpreter interpretr;
-	
+
 	public QuitCommand(Interpreter interpretr) {
-	
+
 		this.interpretr = interpretr;
 	}
 

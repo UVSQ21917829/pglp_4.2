@@ -1,8 +1,8 @@
 package fr.uvsq.exrcice4_2;
 
-public  class ApplicationCom implements Interfacecommand {
+public class ApplicationCom implements Interfacecommand {
 
-	private static Operation op;
+	private Operation op;
 	private MoteurRPN moteur;
 
 	public void setOp(Operation op) {
@@ -14,7 +14,7 @@ public  class ApplicationCom implements Interfacecommand {
 	}
 
 	public ApplicationCom(Operation op, MoteurRPN moteur) {
-		
+
 		this.op = op;
 		this.moteur = moteur;
 	}
@@ -27,9 +27,9 @@ public  class ApplicationCom implements Interfacecommand {
 	@Override
 	public void apply() {
 		// TODO Auto-generated method stub
-		
+
 		this.moteur.appliquerOperation(op);
-		
+
 	}
 
 }
